@@ -1,0 +1,21 @@
+[INFO ] 2024-11-20 17:03:06.715 [main] Log - *** Running test method TC_EWCLeaveRequestModule...
+[INFO ] 2024-11-20 17:03:14.222 [main] Log - Driver has initialized successfully for chromebrowser
+[INFO ] 2024-11-20 17:03:40.571 [main] Log - Title is displayed : KSIDC
+[INFO ] 2024-11-20 17:03:40.923 [main] Log - Login successful !
+[INFO ] 2024-11-20 17:03:47.182 [main] Log - validate login button is visible:true
+[INFO ] 2024-11-20 17:03:58.681 [main] Log - validate login button click:true
+[INFO ] 2024-11-20 17:03:58.804 [main] Log - pop is visible: true
+[INFO ] 2024-11-20 17:03:58.862 [main] Log - Close button visible or not: true
+[INFO ] 2024-11-20 17:04:10.385 [main] Log - close button is clicked true
+[INFO ] 2024-11-20 17:04:10.612 [main] Log - email and password are visible true
+[INFO ] 2024-11-20 17:04:21.983 [main] Log - validate login button click:true
+[INFO ] 2024-11-20 17:04:22.550 [main] Log - enter invalid email and password true
+[INFO ] 2024-11-20 17:04:33.026 [main] Log - inside login click true
+[INFO ] 2024-11-20 17:04:33.138 [main] Log - validate error message true
+[INFO ] 2024-11-20 17:04:33.232 [main] Log - password masked true
+[INFO ] 2024-11-20 17:04:43.702 [main] Log - eyeview clicked true
+[INFO ] 2024-11-20 17:04:55.297 [main] Log - close button is clicked true
+[INFO ] 2024-11-20 17:05:06.600 [main] Log - validate login button click:true
+[INFO ] 2024-11-20 17:05:16.906 [main] Log - inside login click true
+[INFO ] 2024-11-20 17:05:17.120 [main] Log - validation messages displayed true
+[INFO ] 2024-11-20 17:05:17.226 [main] Log - Remember me displayed true
