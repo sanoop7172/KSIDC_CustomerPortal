@@ -159,8 +159,7 @@ public class UserLogin extends Base_Class {
 				Log.error("*** Test execution " + testdata.get("TestScenario").toString() + " failed...");
 				Log.error("" + e.getMessage());
 	
-	
-			}
+	}
 	
 	
 		}
