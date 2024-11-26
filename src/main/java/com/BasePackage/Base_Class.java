@@ -22,6 +22,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
+//import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utility.Log;
@@ -165,7 +166,7 @@ public class Base_Class {
 	   
 	}
 
-	public static void GetEmailOTP(String EmaiID) throws ClassNotFoundException {
+	public static String GetEmailOTP(String EmaiID) throws ClassNotFoundException {
 		
 		
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -173,13 +174,15 @@ public class Base_Class {
 		String Password = "SPQA@sql2019" ;
 		String Url = "jdbc:sqlserver://192.168.32.32\\QA;DatabaseName=BeaconLOS;encrypt=true;trustServerCertificate=true";
 
+		String OTP = null;
+		String validEmailID= "'" + EmaiID + "'";
 		System.out.println("Email ID :"+EmaiID);
 		try(Connection connection = DriverManager.getConnection(Url,UserName,Password)){
 		//con = DriverManager.getConnection(Url,UserName,Password);
 		System.out.println("Class: Common Method: DatabaseConnector: Connected");
-		
+		Thread.sleep(10000);
 		//Execute Query for getting OTP
-		CallableStatement callableStatement = connection.prepareCall("{call SpGetEmailOTPregistrationTEST ("+EmaiID+")}");
+		CallableStatement callableStatement = connection.prepareCall("{call SpGetEmailOTPregistrationTEST ("+validEmailID+")}");
 		//callableStatement.setLong(1, 9999999991L);
 		
 		//System.out.println("Stored procedure called with parameter: 9999999991");
@@ -187,7 +190,7 @@ public class Base_Class {
 		 // Execute stored procedure
         ResultSet resultSet = callableStatement.executeQuery();
         while (resultSet.next()) {
-            String OTP = resultSet.getString("OTP");
+            OTP = resultSet.getString("OTP");
             System.out.println("OTP : " + OTP  );
             
 		
@@ -199,6 +202,7 @@ public class Base_Class {
 		e.printStackTrace();
 	
 	}
+		return OTP;
    
 }
 

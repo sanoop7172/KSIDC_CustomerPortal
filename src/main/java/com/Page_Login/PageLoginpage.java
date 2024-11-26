@@ -1,9 +1,16 @@
 package com.Page_Login;
 
 import java.io.IOException;
+import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.BasePackage.Base_Class;
 import com.Page_Repositary.PageRepository_Login;
@@ -11,6 +18,7 @@ import com.Page_Repositary.PageRepository_Login;
 public class PageLoginpage extends Base_Class{
 	
 	PageRepository_Login LoginPageRepositary = new PageRepository_Login();
+	public WebDriver drive;;
 	
 
 		
@@ -80,7 +88,7 @@ public class PageLoginpage extends Base_Class{
          //password masking
     public boolean passwordmasking() {
         	 
-        	 WebElement masking=driver.findElement(LoginPageRepositary.Password);
+        	 WebElement masking=driver.findElement(LoginPageRepositary.password);
         	 String typeAttribute = masking.getAttribute("type");
              return "password".equals(typeAttribute);
         	 
@@ -109,7 +117,80 @@ public class PageLoginpage extends Base_Class{
         	 
          }
 	
+     public boolean isLoginBtnVisible() {
+ 		ElementDisplayed(LoginPageRepositary.Login);
+ 		return true;
+ 	}
+     
+   //Login with Valid Email and Password   
+ 	public boolean LoginwithvalidEmailandPwrod() throws InterruptedException, IOException {
+ 		
+ 		
+ 		 String UserName = configloader().getProperty("UserName");
+		 String Password = configloader().getProperty("Password");
+ 		 input(LoginPageRepositary.emailaddress,UserName);
+     	 input(LoginPageRepositary.password,Password);
+     	 click(LoginPageRepositary.Login);
+     	 return true;	 
+ 		
+ 		 }
+ 	
+ 
+ 	//Login with Valid Email and Password   
+ 	 	public boolean UserSignOut() throws InterruptedException, IOException {
+ 	 		
+ 	 		Thread.sleep(5000);
+ 	 		click(LoginPageRepositary.UserIconSignout);
+ 	 		System.out.println("User icon Clicked");
+ 	 		Thread.sleep(5000);
+ 			//driver.findElement(By.xpath("(//a[@class='dropdown-item'])[3]")).click();
+ 	 		
+
+ 	 		click(LoginPageRepositary.UserSignOut);
+	     	
+	     	 return true;	 
+ 	 		
+ 	 		 }
+ 	
+ 	public boolean isLoginwithOTPButtonVisible() throws InterruptedException {
+ 		
+ 		click(LoginPageRepositary.loginButton);
+ 		Thread.sleep(3000);
+		ElementDisplayed(LoginPageRepositary.LoginWithOTPButton);
+		return true;
+ 	}
+ 	
+ 	public boolean LoginwithOTPButtonClick() throws InterruptedException {
+		click(LoginPageRepositary.LoginWithOTPButton);
+		return true;
+ 	}
 	
+ 	public boolean EnterEmailAddress() throws InterruptedException, IOException {
+ 		Thread.sleep(3000);
+ 		String EmailUserName = configloader().getProperty("UserName");
+ 		input(LoginPageRepositary.UserEmailAddress,EmailUserName);
+		return true;
+ 	}
+     
+ 	public boolean ClickSendVerifcationCode() throws InterruptedException, IOException {
+ 		click(LoginPageRepositary.SendVerificationCodeButton);
+		return true;
+ 	}
+ 	
+ 	public boolean EnterEmailOTPForLogin() throws InterruptedException, IOException, ClassNotFoundException {
+ 		
+ 		String UserName = configloader().getProperty("UserName");
+ 		System.out.println("User name :"+UserName);
+ 		String OTP = GetEmailOTP(UserName);
+ 		System.out.println("Email OTP :"+OTP);
+ 		input(LoginPageRepositary.EmailOTP,OTP);
+		return true;
+ 	}
+ 	
+ 	public boolean ClickOnVerificationBtn() throws InterruptedException, IOException {
+ 		click(LoginPageRepositary.VerifyCode);
+		return true;
+ 	}
 	
 	
 	
