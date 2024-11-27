@@ -1,19 +1,9 @@
-[INFO ] 2024-11-27 12:28:42.161 [main] Log - *** Running test method Register_Page_Module...
-[INFO ] 2024-11-27 12:28:55.659 [main] Log - Driver has initialized successfully for Chromebrowser
-[INFO ] 2024-11-27 12:29:24.934 [main] Log - Title is displayed : KSIDC
-[INFO ] 2024-11-27 12:29:24.946 [main] Log - Button visible !
-[INFO ] 2024-11-27 12:29:31.192 [main] Log - Validated Registration button visibility : true
-[INFO ] 2024-11-27 12:29:41.427 [main] Log - Register Button ClickedBy.xpath: (//button[text()='Register'])[2]
-[INFO ] 2024-11-27 12:29:41.429 [main] Log - Registration button clicked : true
-[INFO ] 2024-11-27 12:29:41.523 [main] Log - Headline is Enter Your Mobile NumberBy.xpath: //h3[normalize-space()='Enter Your Mobile Number']
-[INFO ] 2024-11-27 12:29:41.524 [main] Log - Headline is Enter Your Mobile Number : true
-[INFO ] 2024-11-27 12:29:41.575 [main] Log - Mobile number field visibleBy.xpath: //label[normalize-space()='Mobile Number']
-[INFO ] 2024-11-27 12:29:41.575 [main] Log - Mobile number field is displayed : true
-[INFO ] 2024-11-27 12:29:41.637 [main] Log - Asterisk Mark VisibleBy.xpath: (//label[@class='form-label input-main-label required-star'])[3]
-[INFO ] 2024-11-27 12:29:41.637 [main] Log - Mobile number field is displayed : true
-[INFO ] 2024-11-27 12:29:41.699 [main] Log - Send verification Button visibleBy.xpath: //div[@id='register-Modal']//button[@type='submit'][normalize-space()='Send Verification Code']
-[INFO ] 2024-11-27 12:29:41.703 [main] Log - SendVerificationCode button is displayed : true
-[INFO ] 2024-11-27 12:29:41.757 [main] Log - Close Button VisibleBy.xpath: (//button[@class='button round-button round-bg-none'])[2]
-[INFO ] 2024-11-27 12:29:41.758 [main] Log - close button is displayed : true
-[INFO ] 2024-11-27 12:29:41.943 [main] Log - Entered Mobile NumberBy.xpath: //input[@placeholder='Mobile Number']
-[INFO ] 2024-11-27 12:29:41.943 [main] Log - Entered valid Mobile Number showing : true
+[INFO ] 2024-11-27 20:00:22.548 [main] Log - *** Running test method Business_Information_Module...
+[INFO ] 2024-11-27 20:00:32.628 [main] Log - Driver has initialized successfully for Chromebrowser
+[INFO ] 2024-11-27 20:01:09.244 [main] Log - Title is displayed : KSIDC
+[INFO ] 2024-11-27 20:01:09.288 [main] Log - Button visible !
+[INFO ] 2024-11-27 20:01:22.752 [main] Log - Login button ClickedBy.xpath: (//button[@class='button secondary btn-medium'])[2]
+[INFO ] 2024-11-27 20:01:25.241 [main] Log - KSIDC.15@gmail.com
+[INFO ] 2024-11-27 20:01:27.797 [main] Log - KSIDCcp@123#
+[INFO ] 2024-11-27 20:01:38.530 [main] Log - Login button clickdBy.xpath: (//button[@class=' w-100 button primary btn-medium'])[1]
+[INFO ] 2024-11-27 20:01:38.533 [main] Log - Login successfully :true
