@@ -258,6 +258,16 @@ public static  String  GetMobileNumberOTP(String MobNo) throws ClassNotFoundExce
 
 	}
 	
+	public static  void ElementToBeVisible(By element) throws InterruptedException {
+
+		//Thread.sleep(2000);
+		WebDriverWait wait = new WebDriverWait(driver, 120);
+		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(element));
+		//Thread.sleep(2000);
+
+	}
+	
+	
 	public static void SwitchToFrame(By frameName)
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 30);
