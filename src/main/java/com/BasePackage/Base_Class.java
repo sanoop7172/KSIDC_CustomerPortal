@@ -129,42 +129,43 @@ public class Base_Class {
 		
 	}
 	
-	public static void GetMobileOTP(String MobNo) throws ClassNotFoundException {
+public static  String  GetMobileNumberOTP(String MobNo) throws ClassNotFoundException {
 		
 		
-			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			String UserName = "sqa";
-			String Password = "SPQA@sql2019" ;
-			String Url = "jdbc:sqlserver://192.168.32.32\\QA;DatabaseName=BeaconLOS;encrypt=true;trustServerCertificate=true";
+		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		String UserName = "sqa";
+		String Password = "SPQA@sql2019" ;
+		String Url = "jdbc:sqlserver://192.168.32.32\\QA;DatabaseName=BeaconLOS;encrypt=true;trustServerCertificate=true";
+		String OTP = null;
 
-			System.out.println("Mobile NUmber"+MobNo);
-			try(Connection connection = DriverManager.getConnection(Url,UserName,Password)){
-			//con = DriverManager.getConnection(Url,UserName,Password);
-			System.out.println("Class: Common Method: DatabaseConnector: Connected");
-			
-			//Execute Query for getting OTP
-			CallableStatement callableStatement = connection.prepareCall("{call SpGetMobileOTPregistrationTEST ("+MobNo+")}");
-			//callableStatement.setLong(1, 9999999991L);
-			
-			System.out.println("Stored procedure called with parameter: 9999999991");
-			
-			 // Execute stored procedure
-            ResultSet resultSet = callableStatement.executeQuery();
-            while (resultSet.next()) {
-                String OTP = resultSet.getString("OTP");
-                System.out.println("OTP : " + OTP  );
-                
-			
-            }
-			
-		}catch(Exception e)
-		{
-			System.out.println("Class: Common Method: DatabaseConnector: Not Connected");
-			e.printStackTrace();
 		
-		}
-	   
+		try(Connection connection = DriverManager.getConnection(Url,UserName,Password)){
+		//con = DriverManager.getConnection(Url,UserName,Password);
+		System.out.println("Class: Common Method: DatabaseConnector: Connected");
+		
+		//Execute Query for getting OTP
+		CallableStatement callableStatement = connection.prepareCall("{call SpGetMobileOTPregistrationTEST ("+MobNo+")}");
+		//callableStatement.setLong(1, 9999999991L);
+		//System.out.println("Stored procedure called with parameter: 9999999991");
+		
+		 // Execute stored procedure
+        ResultSet resultSet = callableStatement.executeQuery();
+        while (resultSet.next()) {
+             OTP = resultSet.getString("OTP");
+            System.out.println("OTP : " + OTP  );
+
+		
+        }
+		
+	}catch(Exception e)
+	{
+		System.out.println("Class: Common Method: DatabaseConnector: Not Connected");
+		e.printStackTrace();
+	
 	}
+		return OTP;
+   
+}
 
 	public static String GetEmailOTP(String EmaiID) throws ClassNotFoundException {
 		
